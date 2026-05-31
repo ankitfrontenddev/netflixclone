@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <div class="netflix-logo">NETFLIX</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">New & Popular</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn">🔔</button>
+      <div class="avatar">A</div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=1400&q=80" alt="hero" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🔥 #1 in India Today</div>
+      <h1 class="hero-title">Stranger Things</h1>
+      <div class="hero-meta">
+        <span class="match">98% Match</span>
+        <span class="year">2022</span>
+        <span class="rating">TV-14</span>
+        <span class="seasons">4 Seasons</span>
+      </div>
+      <p class="hero-desc">When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.</p>
+      <div class="hero-btns">
+        <button class="btn-play" onclick="showToast('▶ Playing...')">▶ Play</button>
+        <button class="btn-info" onclick="showToast('ℹ More Info coming soon!')">ℹ More Info</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="row-section">
+    <h2 class="row-title">🔥 Trending Now</h2>
+    <div class="movies-row" id="trendingRow"></div>
+  </section>
+
+  <section class="row-section">
+    <h2 class="row-title">▶ Continue Watching</h2>
+    <div class="movies-row" id="continueRow"></div>
+  </section>
+
+  <section class="row-section">
+    <h2 class="row-title">⭐ Top Picks for You</h2>
+    <div class="movies-row" id="topPicksRow"></div>
+  </section>
+
+  <section class="row-section">
+    <h2 class="row-title">📋 My List</h2>
+    <div class="movies-row" id="myListRow"></div>
+    <p class="empty-list" id="emptyList">Your list is empty. Add shows to watch later!</p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">FAQ</a>
+      <a href="#">Help Centre</a>
+      <a href="#">Account</a>
+      <a href="#">Media Centre</a>
+      <a href="#">Investor Relations</a>
+      <a href="#">Jobs</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <p class="footer-copy">© 2026 Netflix Clone — Built by <span>Ankit Kumar Sharma</span></p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-img-wrap">
+        <img id="modalImg" src="" alt="" />
+        <div class="modal-img-overlay"></div>
+        <div class="modal-btns">
+          <button class="btn-play small" onclick="showToast('▶ Playing...')">▶ Play</button>
+          <button class="modal-add" id="modalAddBtn">+ My List</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span class="match" id="modalMatch"></span>
+          <span class="year" id="modalYear"></span>
+          <span class="rating" id="modalRating"></span>
+        </div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <div class="modal-genre"><strong>Genre:</strong> <span id="modalGenre"></span></div>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
